@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import { Container, Row, Col} from 'reactstrap';
 import '../styles/Blogs.css';
 
 class Blogs extends Component {
@@ -11,7 +12,6 @@ class Blogs extends Component {
     componentDidMount() {
         fetch('http://localhost:8080/api/blogs')
         .then((response) => {
-
             return response.json();
         })
         .then((responseData) => {
@@ -21,20 +21,56 @@ class Blogs extends Component {
     }
 
     render() {
-        const tableRows = this.state.blogs.map((blog, index) =>
-            <tr key={index}>
-                <div id="SiteName">{blog.name}</div>
+        const blogColumn1 = this.state.blogs.slice(0,this.state.blogs.length/2).map((blog, index) =>
+            <div key={index}>
+                <div id="SiteName">{blog.website}</div>
+                <div id="Author">{blog.author}</div>
+
                 <div id="ArticleName">
-                    <a href={blog.link}> {blog.article} </a>
+                    <a href={blog.link1}> {blog.article1} </a>
                 </div>
-                <div id="Date">{blog.date} </div>
-            </tr>
+                <div id="Date">{blog.date1} </div>
+
+                <div id="ArticleName">
+                    <a href={blog.link2}> {blog.article2} </a>
+                </div>
+                <div id="Date">{blog.date2} </div>
+
+                <div id="ArticleName">
+                    <a href={blog.link3}> {blog.article3} </a>
+                </div>
+                <div id="Date">{blog.date3} </div>
+            </div>
         );
+
+        const blogColumn2 = this.state.blogs.slice(this.state.blogs.length/2, this.state.blogs.length).map((blog, index) =>
+            <div key={index}>
+                <div id="SiteName">{blog.website}</div>
+                <div id="Author">{blog.author}</div>
+
+                <div id="ArticleName">
+                    <a href={blog.link1}> {blog.article1} </a>
+                </div>
+                <div id="Date">{blog.date1} </div>
+
+                <div id="ArticleName">
+                    <a href={blog.link2}> {blog.article2} </a>
+                </div>
+                <div id="Date">{blog.date2} </div>
+
+                <div id="ArticleName">
+                    <a href={blog.link3}> {blog.article3} </a>
+                </div>
+                <div id="Date">{blog.date3} </div>
+            </div>
+        );
+
         return (
             <div className="App">
-                <table>
-                    <tbody>{tableRows}</tbody>
-                </table>
+                <Container>
+                    <Col>{blogColumn1}</Col>
+                    <Col>{blogColumn2}</Col>
+                </Container>
             </div>
         );
     }

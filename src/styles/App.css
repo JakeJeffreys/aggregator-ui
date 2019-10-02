@@ -1,5 +1,5 @@
 .App {
-  text-align: center;
+  text-align: left;
 }
 
 .App-logo {
@@ -25,6 +25,7 @@
   background-color: rgba(169, 67, 63, 0.71);
   height: 50px;
   padding: 50px;
+  text-align: center;
   color: cornsilk;
 }
 
@@ -39,6 +40,7 @@ tr {
 
 .tab-list {
   border-bottom: 1px solid #ccc;
+  text-align: center;
   padding-left: 0;
 }
 
@@ -54,3 +56,7 @@ tr {
   border: solid #ccc;
   border-width: 1px 1px 0 1px;
 }
+
+.col {
+  width: 50%;
+ }

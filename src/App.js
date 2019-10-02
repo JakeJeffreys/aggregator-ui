@@ -7,14 +7,14 @@ function App() {
   return (
       <div className="App">
         <header className="Header">
-          <h1 className="App-title">Blog Aggregator</h1>
+          <h1 className="App-title">Blog Crawler</h1>
         </header>
           <Tabs>
               {/*<div label="Home">*/}
               {/*    Homepage!*/}
               {/*</div>*/}
               <div label="Blogs">
-                  <Blogs/>
+                    <Blogs/>
               </div>
               <div label="Tech">
                   Nothing to see here, this tab is <em>extinct</em>!

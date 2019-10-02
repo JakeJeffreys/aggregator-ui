@@ -37,11 +37,15 @@ else:
 
 blogData['Oblivious Investor'] = []
 blogData['Oblivious Investor'].append({
+    'name': "Oblivious Investor",
     'date': dateOI,
     'article': articleOI,
     'url': url,
     'new': new
 })
+
+resp = requests.put("http://localhost:8080/api/blogs", data=blogData)
+print(resp)
 
 
 #################################
@@ -104,5 +108,8 @@ blogData['My Money Blog'].append({
 
 print (blogData)
 
-with open('json/financeblogs.json', 'w') as outfile:
-    json.dump(blogData, outfile)
+
+
+#
+# with open('json/financeblogs.json', 'w') as outfile:
+#     json.dump(blogData, outfile)
