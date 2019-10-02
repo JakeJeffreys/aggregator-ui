@@ -1,5 +1,4 @@
 import React, {Component} from 'react';
-import { Container, Row, Col} from 'reactstrap';
 import '../styles/Blogs.css';
 
 class Blogs extends Component {
@@ -21,7 +20,7 @@ class Blogs extends Component {
     }
 
     render() {
-        const blogColumn1 = this.state.blogs.slice(0,this.state.blogs.length/2).map((blog, index) =>
+        const blogColumn1 = this.state.blogs.slice(0,this.state.blogs.length/2+1).map((blog, index) =>
             <div key={index}>
                 <div id="SiteName">{blog.website}</div>
                 <div id="Author">{blog.author}</div>
@@ -43,7 +42,7 @@ class Blogs extends Component {
             </div>
         );
 
-        const blogColumn2 = this.state.blogs.slice(this.state.blogs.length/2, this.state.blogs.length).map((blog, index) =>
+        const blogColumn2 = this.state.blogs.slice(this.state.blogs.length/2+1, this.state.blogs.length).map((blog, index) =>
             <div key={index}>
                 <div id="SiteName">{blog.website}</div>
                 <div id="Author">{blog.author}</div>
@@ -67,10 +66,10 @@ class Blogs extends Component {
 
         return (
             <div className="App">
-                <Container>
-                    <Col>{blogColumn1}</Col>
-                    <Col>{blogColumn2}</Col>
-                </Container>
+                <div class="container">
+                    <div class="column">{blogColumn1}</div>
+                    <div class="column">{blogColumn2}</div>
+                </div>
             </div>
         );
     }

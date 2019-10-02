@@ -11,11 +11,12 @@ import json
 import datetime
 from bs4 import BeautifulSoup
 
+postURL = "http://localhost:8080/api/blog"
+headers = {'Content-type': 'application/json', 'Accept': 'text/plain'}
+
 currentDate = datetime.datetime.today()
 cutoffDate = (currentDate - datetime.timedelta(days=10))
 cutoffDateString = cutoffDate.strftime('%Y-%m-%d')
-
-blogData = {}
 
 #################################
 # Oblivious Invester
@@ -35,17 +36,23 @@ if dateOI > cutoffDateString:
 else:
     new = False
 
-blogData['Oblivious Investor'] = []
-blogData['Oblivious Investor'].append({
-    'name': "Oblivious Investor",
-    'date': dateOI,
-    'article': articleOI,
-    'url': url,
-    'new': new
-})
+blogData1 = {
+    "category": "Tech",
+    "website": "Oblivious Investor",
+    "author": "Mike Piper",
+    "article1": articleOI,
+    "date1": dateOI,
+    "link1": url,
+    "article2": articleOI,
+    "date2": dateOI,
+    "link2": url,
+    "article3": articleOI,
+    "date3": dateOI,
+    "link3": url,
+}
 
-resp = requests.put("http://localhost:8080/api/blogs", data=blogData)
-print(resp)
+resp = requests.post(postURL, data=json.dumps(blogData1), headers=headers)
+print("OI: ", resp)
 
 
 #################################
@@ -66,13 +73,23 @@ if dateRBF > cutoffDateString:
 else:
     new = False
 
-blogData['Retire By 40'] = []
-blogData['Retire By 40'].append({
-    'date': dateRBF,
-    'article': articleRBF,
-    'url': url,
-    'new': new
-})
+blogData2 = {
+    "category": "Tech",
+    "website": "Retire By 40",
+    "author": "Joe Udo",
+    "article1": articleRBF,
+    "date1": dateRBF,
+    "link1": url,
+    "article2": articleRBF,
+    "date2": dateRBF,
+    "link2": url,
+    "article3": articleRBF,
+    "date3": dateRBF,
+    "link3": url,
+}
+
+resp = requests.post(postURL, data=json.dumps(blogData2), headers=headers)
+print("RBF: ", resp)
 
 
 #################################
@@ -93,23 +110,20 @@ if dateMMB > cutoffDateString:
 else:
     new = False
 
-blogData['My Money Blog'] = []
-blogData['My Money Blog'].append({
-    'date': dateMMB,
-    'article': articleMMB,
-    'url': url,
-    'new': new
-})
+blogData2 = {
+    "category": "Tech",
+    "website": "My Money Blog",
+    "author": "Jonathan Ping",
+    "article1": articleMMB,
+    "date1": dateMMB,
+    "link1": url,
+    "article2": articleMMB,
+    "date2": dateMMB,
+    "link2": url,
+    "article3": articleMMB,
+    "date3": dateMMB,
+    "link3": url,
+}
 
-
-#################################
-# Final Print to Console
-#################################
-
-print (blogData)
-
-
-
-#
-# with open('json/financeblogs.json', 'w') as outfile:
-#     json.dump(blogData, outfile)
+resp = requests.post(postURL, data=json.dumps(blogData2), headers=headers)
+print("MMB: ", resp)

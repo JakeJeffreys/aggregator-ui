@@ -13,7 +13,7 @@ function App() {
               {/*<div label="Home">*/}
               {/*    Homepage!*/}
               {/*</div>*/}
-              <div label="Blogs">
+              <div label="Finance">
                     <Blogs/>
               </div>
               <div label="Tech">

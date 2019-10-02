@@ -16,3 +16,18 @@
 #Date {
     font-size: 10px;
 }
+
+.container {
+    padding-left: 15%;
+    padding-right: 15%;
+}
+
+.column {
+    border-style: solid;
+    border-width: 1px;
+    border-radius: 5px;
+    margin-left: 4%;
+    padding-left: 2%;
+    float: left;
+    width: 40%;
+}
