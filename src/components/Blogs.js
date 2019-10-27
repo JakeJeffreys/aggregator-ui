@@ -21,54 +21,74 @@ class Blogs extends Component {
 
     render() {
         const blogColumn1 = this.state.blogs.slice(0,this.state.blogs.length/2).map((blog, index) =>
-            <div key={index}>
-                <div id="SiteName">{blog.website}</div>
-                <div id="Author">{blog.author}</div>
+            <div key={index} className="blogBox">
 
-                <div id="ArticleName">
-                    <a href={blog.link1}> {blog.article1} </a>
+                <div className="blogQuarter">
+                    <div id="SiteName">{blog.website}</div>
+                    <div id="Author">{blog.author}</div>
                 </div>
-                <div id="Date">{blog.date1} </div>
 
-                <div id="ArticleName">
-                    <a href={blog.link2}> {blog.article2} </a>
+                <div className="blogQuarter">
+                    <div id="Date">{blog.date1} </div>
+                    <div id="ArticleName">
+                        <a href={blog.link1}> {blog.article1} </a>
+                    </div>
                 </div>
-                <div id="Date">{blog.date2} </div>
 
-                <div id="ArticleName">
-                    <a href={blog.link3}> {blog.article3} </a>
+                <div className="blogQuarter">
+                    <div id="Date">{blog.date2} </div>
+                    <div id="ArticleName">
+                        <a href={blog.link2}> {blog.article2} </a>
+                    </div>
                 </div>
-                <div id="Date">{blog.date3} </div>
+
+                <div className="blogQuarter">
+                    <div id="Date">{blog.date3} </div>
+                    <div id="ArticleName">
+                        <a href={blog.link3}> {blog.article3} </a>
+                    </div>
+                </div>
+
             </div>
         );
 
         const blogColumn2 = this.state.blogs.slice(this.state.blogs.length/2, this.state.blogs.length).map((blog, index) =>
-            <div key={index}>
-                <div id="SiteName">{blog.website}</div>
-                <div id="Author">{blog.author}</div>
+            <div key={index} className="blogBox">
 
-                <div id="ArticleName">
-                    <a href={blog.link1}> {blog.article1} </a>
+                <div className="blogQuarter">
+                    <div id="SiteName">{blog.website}</div>
+                    <div id="Author">{blog.author}</div>
                 </div>
-                <div id="Date">{blog.date1} </div>
 
-                <div id="ArticleName">
-                    <a href={blog.link2}> {blog.article2} </a>
+                <div className="blogQuarter">
+                    <div id="Date">{blog.date1} </div>
+                    <div id="ArticleName">
+                        <a href={blog.link1}> {blog.article1} </a>
+                    </div>
                 </div>
-                <div id="Date">{blog.date2} </div>
 
-                <div id="ArticleName">
-                    <a href={blog.link3}> {blog.article3} </a>
+                <div className="blogQuarter">
+                    <div id="Date">{blog.date2} </div>
+                    <div id="ArticleName">
+                        <a href={blog.link2}> {blog.article2} </a>
+                    </div>
                 </div>
-                <div id="Date">{blog.date3} </div>
+
+                <div className="blogQuarter">
+                    <div id="Date">{blog.date3} </div>
+                    <div id="ArticleName">
+                        <a href={blog.link3}> {blog.article3} </a>
+                    </div>
+                </div>
+
             </div>
         );
 
         return (
             <div className="App">
-                <div class="container">
-                    <div class="column">{blogColumn1}</div>
-                    <div class="column">{blogColumn2}</div>
+                <div className="container">
+                    <div className="column">{blogColumn1}</div>
+                    <div className="column">{blogColumn2}</div>
                 </div>
             </div>
         );

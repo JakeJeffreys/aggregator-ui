@@ -1,33 +1,74 @@
 #SiteName {
     text-align: left;
     display: block;
-    font-size: 1.17em;
-    margin-top: 1em;
-    margin-bottom: 1em;
-    margin-left: 0;
-    margin-right: 0;
+    font-size: 20px;
     font-weight: bold;
+    margin-top: 14px;
     width: 100%;
 }
 
 #ArticleName {
+    padding-bottom: 5px;
+    font-size: 13px;
+}
+
+#Author {
+    padding-bottom: 15px;
+    font-size: 15px;
 }
 
 #Date {
-    font-size: 10px;
+    font-size: 11px;
+    color: grey;
 }
 
 .container {
+    width: 80%;
     padding-left: 15%;
-    padding-right: 15%;
+    padding-top: 2%;
 }
 
 .column {
+    padding: 10px;
+    padding-bottom: 2em;
+    float: left;
+    width: 40%;
+}
+
+.blogBox {
+    height: 300px;
     border-style: solid;
     border-width: 1px;
     border-radius: 5px;
-    margin-left: 4%;
-    padding-left: 2%;
-    float: left;
-    width: 40%;
+    padding-left: 14px;
+    padding-right: 14px;
+    margin-bottom: 20px;
+}
+
+.blogQuarter {
+    height: 24%;
+}
+
+a {
+    text-decoration: none;
+    color: blue;
+}
+/* unvisited link */
+/* a:link {
+  color: white;
+} */
+
+/* visited link */
+/*a:visited {*/
+/*  color: grey;*/
+/*}*/
+
+/* mouse over link */
+a:hover {
+    color: hotpink;
+}
+
+/* selected link */
+a:active {
+    color: blue;
 }

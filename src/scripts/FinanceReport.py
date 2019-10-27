@@ -14,10 +14,6 @@ from bs4 import BeautifulSoup
 postURL = "http://localhost:8080/api/blog"
 headers = {'Content-type': 'application/json', 'Accept': 'text/plain'}
 
-currentDate = datetime.datetime.today()
-cutoffDate = (currentDate - datetime.timedelta(days=10))
-cutoffDateString = cutoffDate.strftime('%Y-%m-%d')
-
 #################################
 # Financial Samurai
 #################################
@@ -36,20 +32,24 @@ linkFS_2 = soup.find_all("h2", class_="entry-title")[1].a.get('href')
 articleFS_3 = soup.find_all("h2", class_="entry-title")[2].string
 linkFS_3 = soup.find_all("h2", class_="entry-title")[2].a.get('href')
 
-blogData0 = {
+blogData1 = {
+    "id": 1,
     "category": "Tech",
     "website": "Financial Samurai",
     "author": "Sam Dogen",
     "url": url,
     "article1": articleFS_1,
+    "date1": "No date available",
     "link1": linkFS_1,
     "article2": articleFS_2,
+    "date2": "No date available",
     "link2": linkFS_2,
     "article3": articleFS_3,
+    "date3": "No date available",
     "link3": linkFS_3,
 }
 
-resp = requests.post(postURL, data=json.dumps(blogData0), headers=headers)
+resp = requests.post(postURL, data=json.dumps(blogData1), headers=headers)
 print("FS: ", resp)
 
 
@@ -74,7 +74,8 @@ dateOI_3 = soup.find_all("span", class_="date published time")[2].get('title').s
 articleOI_3 = soup.find_all("a", class_="entry-title-link")[2].string
 linkOI_3 = soup.find_all("a", class_="entry-title-link")[2].get('href')
 
-blogData1 = {
+blogData2 = {
+    "id": 2,
     "category": "Tech",
     "website": "Oblivious Investor",
     "author": "Mike Piper",
@@ -90,7 +91,7 @@ blogData1 = {
     "link3": linkOI_3,
 }
 
-resp = requests.post(postURL, data=json.dumps(blogData1), headers=headers)
+resp = requests.post(postURL, data=json.dumps(blogData2), headers=headers)
 print("OI: ", resp)
 
 
@@ -115,7 +116,8 @@ dateRBF_3 = soup.find_all("span", class_="post_date")[2].get('title')
 articleRBF_3 = soup.find_all("h2", class_="headline")[2].string
 linkRBF_3 = soup.find_all("h2", class_="headline")[2].a.get('href')
 
-blogData2 = {
+blogData3 = {
+    "id":3,
     "category": "Tech",
     "website": "Retire By 40",
     "author": "Joe Udo",
@@ -131,7 +133,7 @@ blogData2 = {
     "link3": linkRBF_3,
 }
 
-resp = requests.post(postURL, data=json.dumps(blogData2), headers=headers)
+resp = requests.post(postURL, data=json.dumps(blogData3), headers=headers)
 print("RBF: ", resp)
 
 
@@ -156,7 +158,8 @@ dateMMB_3 = soup.find_all("span", class_="date published time")[4].get('title').
 articleMMB_3 = soup.find_all("a", class_="entry-title-link")[2].string
 linkMMB_3 = soup.find_all("a", class_="entry-title-link")[2].get('href')
 
-blogData2 = {
+blogData4 = {
+    "id": 4,
     "category": "Tech",
     "website": "My Money Blog",
     "author": "Jonathan Ping",
@@ -172,5 +175,5 @@ blogData2 = {
     "link3": linkMMB_3,
 }
 
-resp = requests.post(postURL, data=json.dumps(blogData2), headers=headers)
+resp = requests.post(postURL, data=json.dumps(blogData4), headers=headers)
 print("MMB: ", resp)
