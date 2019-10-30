@@ -11,10 +11,9 @@ import json
 import datetime
 from bs4 import BeautifulSoup
 
-currentDate = datetime.datetime.today()
-cutoffDate = (currentDate - datetime.timedelta(days=10))
-cutoffDateString = cutoffDate.strftime('%Y-%m-%d')
-
+dns = "http://api.blogbase.io"
+postURL = dns + "/api/blog"
+headers = {'Content-type': 'application/json', 'Accept': 'text/plain'}
 
 #################################
 # Coding horror
@@ -25,23 +24,37 @@ response = requests.get(url)
 html = response.content
 soup = BeautifulSoup(html, "html.parser")
 
-dateCH = soup.time.get('datetime')
-articleCH = soup.find("h2", class_="post-title").string
+dateCH_1 = soup.find_all("span", class_="post-meta")[0].time.get('datetime')
+articleCH_1 = soup.find_all("h2", class_="post-title")[0].string
+linkCH_1 = soup.find_all("h2", class_="post-title")[0].a.get('href')
 
-new = False
-if dateCH > cutoffDateString:
-    new = True
-else:
-    new = False
+dateCH_2 = soup.find_all("span", class_="post-meta")[1].time.get('datetime')
+articleCH_2 = soup.find_all("h2", class_="post-title")[1].string
+linkCH_2 = soup.find_all("h2", class_="post-title")[1].a.get('href')
 
-blogData = {}
-blogData['Coding Horror'] = []
-blogData['Coding Horror'].append({
-    'date': dateCH,
-    'article': articleCH,
-    'url': url,
-    'new': new
-})
+dateCH_3 = soup.find_all("span", class_="post-meta")[2].time.get('datetime')
+articleCH_3 = soup.find_all("h2", class_="post-title")[2].string
+linkCH_3 = soup.find_all("h2", class_="post-title")[2].a.get('href')
+
+blogData5 = {
+    "id": 5,
+    "category": "Tech",
+    "website": "Coding Horror",
+    "author": "Jeff Atwood",
+    "url": url,
+    "article1": articleCH_1,
+    "date1": dateCH_1,
+    "link1": url + linkCH_1,
+    "article2": articleCH_2,
+    "date2": dateCH_2,
+    "link2": url + linkCH_2,
+    "article3": articleCH_3,
+    "date3": dateCH_3,
+    "link3": url + linkCH_3,
+}
+
+resp = requests.post(postURL, data=json.dumps(blogData5), headers=headers)
+print("CH: ", resp)
 
 
 #################################
@@ -53,23 +66,37 @@ response = requests.get(url)
 html = response.content
 soup = BeautifulSoup(html, "html.parser")
 
-dateJOS = soup.time.get('datetime').split('T')[0]
-articleJOS = soup.find("h2", class_="entry-title").string
+dateJOS_1 = soup.find_all("time", class_="entry-date published")[0].get('datetime').split('T')[0]
+articleJOS_1 = soup.find_all("h2", class_="entry-title")[0].string
+linkJOS_1 = soup.find_all("h2", class_="entry-title")[0].a.get('href')
 
-new = False
-if dateJOS > cutoffDateString:
-    new = True
-else:
-    new = False
+dateJOS_2 = soup.find_all("time", class_="entry-date published")[1].get('datetime').split('T')[0]
+articleJOS_2 = soup.find_all("h2", class_="entry-title")[1].string
+linkJOS_2 = soup.find_all("h2", class_="entry-title")[1].a.get('href')
 
-blogData['Joel On Software'] = []
-blogData['Joel On Software'].append({
-    'date': dateJOS,
-    'article': articleJOS,
-    'url': url,
-    'new': new
-})
+dateJOS_3 = soup.find_all("time", class_="entry-date published")[2].get('datetime').split('T')[0]
+articleJOS_3 = soup.find_all("h2", class_="entry-title")[2].string
+linkJOS_3 = soup.find_all("h2", class_="entry-title")[2].a.get('href')
 
+blogData6 = {
+    "id": 6,
+    "category": "Tech",
+    "website": "Joel On Software",
+    "author": "Joel Spolsky",
+    "url": url,
+    "article1": articleJOS_1,
+    "date1": dateJOS_1,
+    "link1": linkJOS_1,
+    "article2": articleJOS_2,
+    "date2": dateJOS_2,
+    "link2": linkJOS_2,
+    "article3": articleJOS_3,
+    "date3": dateJOS_3,
+    "link3": linkJOS_3,
+}
+
+resp = requests.post(postURL, data=json.dumps(blogData6), headers=headers)
+print("JOS: ", resp)
 
 #################################
 # A List Apart
@@ -80,29 +107,34 @@ response = requests.get(url)
 html = response.content
 soup = BeautifulSoup(html, "html.parser")
 
-dateALA = soup.time.get('datetime').split('T')[0]
-articleALA = soup.find("h2", class_="entry-title").string
+dateALA_1 = soup.find_all("time", class_="entry-date published")[0].get('datetime').split('T')[0]
+articleALA_1 = soup.find_all("h2", class_="entry-title")[0].string
+linkALA_1 = soup.find_all("h2", class_="entry-title")[0].a.get('href')
 
-new = False
-if dateALA > cutoffDateString:
-    new = True
-else:
-    new = False
+dateALA_2 = soup.find_all("time", class_="entry-date published")[1].get('datetime').split('T')[0]
+articleALA_2 = soup.find_all("h2", class_="entry-title")[1].string
+linkALA_2 = soup.find_all("h2", class_="entry-title")[1].a.get('href')
 
-blogData['A List Apart'] = []
-blogData['A List Apart'].append({
-    'date': dateALA,
-    'article': articleALA,
-    'url': url,
-    'new': new
-})
+# dateALA_3 = soup.find_all("time", class_="entry-date published")[2].get('datetime').split('T')[0]
+# articleALA_3 = soup.find_all("h2", class_="entry-title")[2].string
+# linkALA_3 = soup.find_all("h2", class_="entry-title")[2].a.get('href')
 
+blogData7 = {
+    "id": 7,
+    "category": "Tech",
+    "website": "Joel On Software",
+    "author": "Joel Spolsky",
+    "url": url,
+    "article1": articleALA_1,
+    "date1": dateALA_1,
+    "link1": linkALA_1,
+    "article2": articleALA_2,
+    "date2": dateALA_2,
+    "link2": linkALA_2,
+    # "article3": articleALA_3,
+    # "date3": dateALA_3,
+    # "link3": linkALA_3,
+}
 
-#################################
-# Final Print to Console
-#################################
-
-print (blogData)
-
-with open('json/techblogs.json', 'w') as outfile:
-    json.dump(blogData, outfile)
+resp = requests.post(postURL, data=json.dumps(blogData7), headers=headers)
+print("ALA: ", resp)

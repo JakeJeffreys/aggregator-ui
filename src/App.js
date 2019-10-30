@@ -7,7 +7,7 @@ function App() {
   return (
       <div className="App">
         <header className="Header">
-          Blog Crawler
+          Blog Base
         </header>
           <Tabs>
               {/*<div label="Home">*/}

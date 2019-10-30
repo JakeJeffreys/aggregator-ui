@@ -1,0 +1,1 @@
+export const DNS_SERVER = "http://api.blogbase.io"

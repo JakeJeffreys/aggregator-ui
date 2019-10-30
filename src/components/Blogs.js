@@ -1,6 +1,10 @@
 import React, {Component} from 'react';
 import '../styles/Blogs.css';
 
+import * as myConstClass from '../properties';
+
+const URL = myConstClass.DNS_SERVER;
+
 class Blogs extends Component {
 
     constructor(props) {
@@ -9,7 +13,7 @@ class Blogs extends Component {
     }
 
     componentDidMount() {
-        fetch('http://localhost:8080/api/blogs')
+        fetch(URL + '/api/blogs')
         .then((response) => {
             return response.json();
         })

@@ -11,7 +11,8 @@ import json
 import datetime
 from bs4 import BeautifulSoup
 
-postURL = "http://localhost:8080/api/blog"
+dns = "http://api.blogbase.io"
+postURL = dns + "/api/blog"
 headers = {'Content-type': 'application/json', 'Accept': 'text/plain'}
 
 #################################
@@ -34,7 +35,7 @@ linkFS_3 = soup.find_all("h2", class_="entry-title")[2].a.get('href')
 
 blogData1 = {
     "id": 1,
-    "category": "Tech",
+    "category": "Finance",
     "website": "Financial Samurai",
     "author": "Sam Dogen",
     "url": url,
@@ -76,7 +77,7 @@ linkOI_3 = soup.find_all("a", class_="entry-title-link")[2].get('href')
 
 blogData2 = {
     "id": 2,
-    "category": "Tech",
+    "category": "Finance",
     "website": "Oblivious Investor",
     "author": "Mike Piper",
     "url": url,
@@ -118,7 +119,7 @@ linkRBF_3 = soup.find_all("h2", class_="headline")[2].a.get('href')
 
 blogData3 = {
     "id":3,
-    "category": "Tech",
+    "category": "Finance",
     "website": "Retire By 40",
     "author": "Joe Udo",
     "url": url,
@@ -160,7 +161,7 @@ linkMMB_3 = soup.find_all("a", class_="entry-title-link")[2].get('href')
 
 blogData4 = {
     "id": 4,
-    "category": "Tech",
+    "category": "Finance",
     "website": "My Money Blog",
     "author": "Jonathan Ping",
     "url": url,
