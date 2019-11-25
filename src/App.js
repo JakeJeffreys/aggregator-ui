@@ -14,10 +14,10 @@ function App() {
               {/*    Homepage!*/}
               {/*</div>*/}
               <div label="Finance">
-                    <Blogs/>
+                    <Blogs category="Finance"/>
               </div>
               <div label="Tech">
-                  Nothing to see here, this tab is <em>extinct</em>!
+                  <Blogs category="Tech"/>
               </div>
           </Tabs>
       </div>

@@ -13,7 +13,7 @@ class Blogs extends Component {
     }
 
     componentDidMount() {
-        fetch(URL + '/api/blogs')
+        fetch(URL + '/api/blogs?category=' + this.props.category)
         .then((response) => {
             return response.json();
         })

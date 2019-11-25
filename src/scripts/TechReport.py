@@ -8,10 +8,10 @@
 
 import requests
 import json
-import datetime
 from bs4 import BeautifulSoup
 
-dns = "http://api.blogbase.io"
+# dns = "http://localhost:5000"
+dns = "https://api.blogbase.io"
 postURL = dns + "/api/blog"
 headers = {'Content-type': 'application/json', 'Accept': 'text/plain'}
 
@@ -98,9 +98,9 @@ blogData6 = {
 resp = requests.post(postURL, data=json.dumps(blogData6), headers=headers)
 print("JOS: ", resp)
 
-#################################
+################################
 # A List Apart
-#################################
+################################
 
 url = "https://alistapart.com/"
 response = requests.get(url)
@@ -122,8 +122,8 @@ linkALA_2 = soup.find_all("h2", class_="entry-title")[1].a.get('href')
 blogData7 = {
     "id": 7,
     "category": "Tech",
-    "website": "Joel On Software",
-    "author": "Joel Spolsky",
+    "website": "A List Apart",
+    "author": "Jeffrey Zeldman",
     "url": url,
     "article1": articleALA_1,
     "date1": dateALA_1,
