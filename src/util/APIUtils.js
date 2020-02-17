@@ -61,15 +61,10 @@ export function getBlogs() {
     })
 }
 
-export function getUserBlogs(blogsRequest) {
-    if(!localStorage.getItem(ACCESS_TOKEN)) {
-        return Promise.reject("No access token set.");
-    }
-
+export function getBlogsByCategory(category) {
     return request({
-        url: API_BASE_URL + "/api/blogs/user",
-        method: 'GET',
-        body: JSON.stringify(blogsRequest)
+        url: API_BASE_URL + "/api/blogs/category?category=" + category,
+        method: 'GET'
     })
 }
 
@@ -84,14 +79,3 @@ export function setUserBlogPreferences(blogsRequest) {
         body: JSON.stringify(blogsRequest)
     })
 }
-
-// export function getUserCategories() {
-//     if(!localStorage.getItem(ACCESS_TOKEN)) {
-//         return Promise.reject("No access token set.");
-//     }
-//
-//     return request({
-//         url: API_BASE_URL + "/api/categories/user",
-//         method: 'GET',
-//     })
-// }

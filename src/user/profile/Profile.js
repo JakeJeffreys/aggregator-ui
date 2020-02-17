@@ -5,7 +5,6 @@ import {getCurrentUser, setUserBlogPreferences} from "../../util/APIUtils";
 class Profile extends Component {
     constructor(props) {
         super(props);
-        console.log(props);
 
         this.state = {
             tech: false,
@@ -13,8 +12,6 @@ class Profile extends Component {
             travel: false,
             food: false
         };
-
-        console.log("Initial State:", this.state);
 
         this.populateInitialState();
 
@@ -26,14 +23,12 @@ class Profile extends Component {
     populateInitialState() {
         getCurrentUser()
             .then(response => {
-                console.log("User: ", response);
                 this.setState({
                     tech: response.tech,
                     finance: response.finance,
                     travel: response.travel,
                     food: response.food
                 });
-                console.log("New State:", this.state);
             }).catch(error => {
             console.error(error)
         });
@@ -71,10 +66,6 @@ class Profile extends Component {
 
         event.preventDefault();
     }
-
-    // componentDidMount() {
-    //     this.populateInitialState();
-    // }
 
     render() {
 

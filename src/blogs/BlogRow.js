@@ -1,36 +1,29 @@
 import React, {Component} from 'react';
 import './Blogs.css';
-import { getBlogs } from '../util/APIUtils';
+import {getBlogsByCategory} from '../util/APIUtils';
 
-class Blogs extends Component {
+class BlogRow extends Component {
 
     constructor(props) {
         super(props);
-        this.state = {
-            authenticated: false,
-            blogs: [],
-            loading: false
-        };
+        console.log("PROPS", props);
 
-        this.loadBlogs = this.loadBlogs.bind(this);
+        this.state = {
+            category: this.props.category,
+            blogs: []
+        }
     }
 
-    loadBlogs() {
-        this.setState({
-            loading: true
-        })
 
-        getBlogs()
+    loadBlogs() {
+        console.log("Loading blogs");
+
+        getBlogsByCategory(this.state.category)
             .then( response => {
                 this.setState({
-                    blogs: response,
-                    authenticated: true,
-                    loading: false
+                    blogs: response
                 })
             }).catch(error => {
-                this.setState({
-                    loading: false
-                });
                 console.error(error);
         });
     }
@@ -73,13 +66,11 @@ class Blogs extends Component {
         );
 
         return (
-            <div className="App">
-                <div className="blogsContainer">
-                    <div>{blogs}</div>
-                </div>
+            <div className="blogsRow">
+                <div>{blogs}</div>
             </div>
         );
     }
 }
 
-export default Blogs;
+export default BlogRow;
