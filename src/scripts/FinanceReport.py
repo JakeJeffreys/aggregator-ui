@@ -10,8 +10,8 @@ import requests
 import json
 from bs4 import BeautifulSoup
 
-# dns = "http://localhost:5000"
-dns = "https://api.blogbase.io"
+dns = "http://localhost:8080"
+# dns = "https://api.blogbase.io"
 postURL = dns + "/api/blog"
 headers = {'Content-type': 'application/json', 'Accept': 'text/plain'}
 
