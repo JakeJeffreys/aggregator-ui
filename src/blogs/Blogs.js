@@ -18,7 +18,7 @@ class Blogs extends Component {
     loadBlogs() {
         this.setState({
             loading: true
-        })
+        });
 
         getBlogs()
             .then( response => {

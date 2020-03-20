@@ -26,7 +26,7 @@ class App extends Component {
             authenticated: false,
             currentUser: null,
             loading: false
-        }
+        };
 
         this.loadCurrentlyLoggedInUser = this.loadCurrentlyLoggedInUser.bind(this);
         this.handleLogout = this.handleLogout.bind(this);
@@ -45,10 +45,11 @@ class App extends Component {
                     loading: false
                 });
             }).catch(error => {
-            this.setState({
-                loading: false
+                this.setState({
+                    loading: false
+                });
+                console.error(error)
             });
-        });
     }
 
     handleLogout() {
@@ -101,51 +102,3 @@ class App extends Component {
 }
 
 export default App;
-
-
-
-
-
-
-
-
-
-
-// import React from 'react';
-// import './App.css';
-// import Blogs from "../blogs/Blogs";
-// import Tabs from "../tabs/Tabs";
-//
-// function App() {
-//
-//   return (
-//       <div className="App">
-//         <header className="Header">
-//           Blog Base
-//         </header>
-//
-//           <Tabs>
-//               <div label="Finance">
-//                     <Blogs category="Finance"/>
-//               </div>
-//               <div label="Tech">
-//                   <Blogs category="Tech"/>
-//               </div>
-//               <div label="Health">
-//                   <Blogs category="Health"/>
-//               </div>
-//               <div label="Food">
-//                   <Blogs category="Food"/>
-//               </div>
-//               <div label="Travel">
-//                   <Blogs category="Travel"/>
-//               </div>
-//               <div label="Science">
-//                   <Blogs category="Science"/>
-//               </div>
-//           </Tabs>
-//       </div>
-//   );
-// }
-//
-// export default App;

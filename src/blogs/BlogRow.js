@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import './Blogs.css';
 import {getBlogsByCategory} from '../util/APIUtils';
+import LoadingIndicator from "../common/LoadingIndicator";
 
 class BlogRow extends Component {
 
@@ -33,6 +34,11 @@ class BlogRow extends Component {
     }
 
     render() {
+        // if prop is true then show?
+        if(!this.props.show) {
+            return (null);
+        }
+
         const blogs = this.state.blogs.map((blog, index) =>
             <div key={index} className="blogBox">
 
