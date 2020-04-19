@@ -50,7 +50,7 @@ class UserBlogs extends Component {
         return (
             <div className="App">
                 <div className="blogsContainer">
-                    <BlogRow category={'Tech'} show={this.state.tech}/>
+                    <BlogRow category={'Technology'} show={this.state.tech}/>
                 </div>
                 <div className="blogsContainer">
                     <BlogRow category={'Finance'} show={this.state.finance}/>
