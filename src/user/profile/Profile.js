@@ -7,10 +7,15 @@ class Profile extends Component {
         super(props);
 
         this.state = {
-            tech: false,
             finance: false,
+            business: false,
+            technology: false,
             travel: false,
-            food: false
+            food: false,
+            health: false,
+            fashion: false,
+            diy: false,
+            sports: false,
         };
 
         this.populateInitialState();
@@ -24,16 +29,20 @@ class Profile extends Component {
         getCurrentUser()
             .then(response => {
                 this.setState({
-                    tech: response.tech,
                     finance: response.finance,
+                    business: response.business,
+                    technology: response.technology,
                     travel: response.travel,
-                    food: response.food
+                    food: response.food,
+                    health: response.health,
+                    diy: response.diy,
+                    fashion: response.fashion,
+                    sports: response.sports
                 });
             }).catch(error => {
             console.error(error)
         });
     }
-
 
     handleChange(key) {
         return function (e) {
@@ -44,14 +53,10 @@ class Profile extends Component {
     }
 
     handleSubmit(event) {
-
         let userBlogsRequest = null;
-
         getCurrentUser()
             .then(response => {
-
                 userBlogsRequest = Object.assign(response, this.state);
-
                 setUserBlogPreferences(userBlogsRequest)
                     .then( response => {
                         console.log("Updated user preferences.");
@@ -63,7 +68,6 @@ class Profile extends Component {
             .catch(error => {
                 console.error(error)
             });
-
         event.preventDefault();
     }
 
@@ -92,14 +96,24 @@ class Profile extends Component {
 
                         <form onSubmit={this.handleSubmit}>
                             <label>
-                                <input type="checkbox" checked={this.state.tech} onChange={this.handleChange('tech')} />
-                                Technology <br />
                                 <input type="checkbox" checked={this.state.finance} onChange={this.handleChange('finance')} />
                                 Finance <br />
+                                <input type="checkbox" checked={this.state.business} onChange={this.handleChange('business')} />
+                                Business <br />
+                                <input type="checkbox" checked={this.state.technology} onChange={this.handleChange('technology')} />
+                                Technology <br />
                                 <input type="checkbox" checked={this.state.travel} onChange={this.handleChange('travel')} />
                                 Travel <br />
                                 <input type="checkbox" checked={this.state.food} onChange={this.handleChange('food')} />
                                 Food <br />
+                                <input type="checkbox" checked={this.state.health} onChange={this.handleChange('health')} />
+                                Health <br />
+                                <input type="checkbox" checked={this.state.diy} onChange={this.handleChange('diy')} />
+                                DIY <br />
+                                <input type="checkbox" checked={this.state.fashion} onChange={this.handleChange('fashion')} />
+                                Fashion <br />
+                                <input type="checkbox" checked={this.state.sports} onChange={this.handleChange('sports')} />
+                                Sports <br />
                             </label>
                             <input type="submit" value="Submit" />
                         </form>

@@ -47,8 +47,15 @@ body {
   padding: 0;
   font-size: 16px;
   font-weight: 400;
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: 'Source Sans Pro', sans-serif;
   color: rgba(0,0,0,.80);
+  /*
+  background: linear-gradient( rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.9) ), url('https://picsum.photos/g/1600/800?random');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 50% 0;
+  width: 100%;
+  */
 }
 
 .container {

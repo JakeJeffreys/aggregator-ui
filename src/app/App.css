@@ -52,3 +52,27 @@
   height: 100%;
 }
 
+a {
+  text-decoration: none;
+  color: black
+}
+/* unvisited link */
+/* a:link {
+  color: white;
+} */
+
+/* visited link */
+/* a:visited {
+  color: grey;
+} */
+
+/* mouse over link */
+a:hover {
+  color: #0f96f6;
+}
+
+/* selected link */
+a:active {
+  color: #0f96f6;
+}
+

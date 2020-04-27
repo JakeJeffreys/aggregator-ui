@@ -68,6 +68,13 @@ export function getBlogsByCategory(category) {
     })
 }
 
+export function getBlogCategories() {
+        return request({
+            url: API_BASE_URL + "/api/categories",
+            method: 'GET'
+        })
+}
+
 export function setUserBlogPreferences(blogsRequest) {
     if(!localStorage.getItem(ACCESS_TOKEN)) {
         return Promise.reject("No access token set.");

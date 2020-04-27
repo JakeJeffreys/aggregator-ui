@@ -3,7 +3,6 @@
     min-height: calc(100vh - 60px);
     overflow: auto;
     position: relative;
-    padding-top: 60px;
     width: 100%;
 }
 
@@ -12,6 +11,23 @@
     font-weight: 400;
     color: rgba(0,0,0,0.70);
     margin-top: 50px; 
+}
+
+.DateTime {
+    padding: 1%;
+}
+
+.Time {
+  width: 100%;
+  font-size: 60px;
+  margin: 5px;
+  /* text-shadow: 0 0 5px black; */
+}
+
+.Date {
+  width: 100%;
+  font-size: 20px;
+  /* text-shadow: 0 0 3px black; */
 }
 
 .graf-bg-container {

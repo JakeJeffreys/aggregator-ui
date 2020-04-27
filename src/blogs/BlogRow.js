@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import './Blogs.css';
 import {getBlogsByCategory} from '../util/APIUtils';
-import LoadingIndicator from "../common/LoadingIndicator";
+//import LoadingIndicator from "../common/LoadingIndicator";
 
 class BlogRow extends Component {
 
@@ -72,9 +72,12 @@ class BlogRow extends Component {
         );
 
         return (
+        <div>
+            <div id="CategoryName">{this.props.category}</div>
             <div className="blogsRow">
                 <div>{blogs}</div>
             </div>
+        </div>
         );
     }
 }
