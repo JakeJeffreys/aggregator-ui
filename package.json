@@ -5,7 +5,10 @@
   "dependencies": {
     "moment": "^2.24.0",
     "react": "^16.9.0",
+    "react-alert": "^7.0.0",
+    "react-alert-template-basic": "^1.0.0",
     "react-dom": "^16.9.0",
+    "react-grid-layout": "^0.18.3",
     "react-moment": "^0.9.7",
     "react-router-dom": "^5.1.2",
     "react-s-alert": "^1.4.1",

@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './Profile.css';
 import {getCurrentUser, setUserBlogPreferences} from "../../util/APIUtils";
+import Alert from 'react-s-alert';
 
 class Profile extends Component {
     constructor(props) {
@@ -59,10 +60,10 @@ class Profile extends Component {
                 userBlogsRequest = Object.assign(response, this.state);
                 setUserBlogPreferences(userBlogsRequest)
                     .then( response => {
-                        console.log("Updated user preferences.");
+                        Alert.success("Successfully Updated Preferences!");
                     })
                     .catch(error => {
-                        console.error("Error", error);
+                        Alert.error("Failed to Update Preferences!");
                     });
             })
             .catch(error => {
@@ -118,7 +119,7 @@ class Profile extends Component {
                             <input type="submit" value="Submit" />
                         </form>
                     </div>
-                </div>    
+                </div>
             </div>
         );
     }

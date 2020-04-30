@@ -1,23 +1,19 @@
 import React, {Component} from 'react';
 import './Blogs.css';
-import BlogRow from "./BlogRow";
+import CategoryObject from "./CategoryObject";
 import {getCurrentUser} from "../util/APIUtils";
 import LoadingIndicator from "../common/LoadingIndicator";
+import {Responsive, WidthProvider} from 'react-grid-layout';
+
+const ResponsiveGridLayout = WidthProvider(Responsive);
 
 class UserBlogs extends Component {
 
     constructor(props) {
         super(props);
         this.state = {
-            finance: false,
-            business: false,
-            technology: false,
-            travel: false,
-            food: false,
-            health: false,
-            fashion: false,
-            diy: false,
-            sports: false,
+            categoryValues: [],
+            loading: false
         };
     }
 
@@ -28,14 +24,17 @@ class UserBlogs extends Component {
         getCurrentUser()
             .then(response => {
                 this.setState({
-                    finance: response.finance,
-                    business: response.business,
-                    technology: response.technology,
-                    travel: response.travel,
-                    food: response.food,
-                    health: response.health,
-                    diy: response.diy,
-                    fashion: response.fashion,
+                    categoryValues: [
+                        {name: "Finance", status: response.finance},
+                        {name: "Business", status: response.business},
+                        {name: "Technology", status: response.technology},
+                        {name: "Travel", status: response.travel},
+                        {name: "Food", status: response.food},
+                        {name: "Health", status: response.health},
+                        {name: "DIY", status: response.diy},
+                        {name: "Fashion", status: response.fashion},
+                        {name: "Sports", status: response.sports}
+                    ],
                     loading: false
                 });
             }).catch(error => {
@@ -55,37 +54,31 @@ class UserBlogs extends Component {
             return <LoadingIndicator />
         }
 
-        return (
-            <div className="App">
-                <div className="blogsContainer">
-                    <BlogRow category={'Finance'} show={this.state.finance}/>
-                </div>
-                <div className="blogsContainer">
-                    <BlogRow category={'Business'} show={this.state.business}/>
-                </div>
-                <div className="blogsContainer">
-                    <BlogRow category={'Technology'} show={this.state.technology}/>
-                </div>
-                <div className="blogsContainer">
-                    <BlogRow category={'Travel'} show={this.state.travel}/>
-                </div>
-                <div className="blogsContainer">
-                    <BlogRow category={'Food'} show={this.state.food}/>
-                </div>
-                <div className="blogsContainer">
-                    <BlogRow category={'Health'} show={this.state.health}/>
-                </div>
-                <div className="blogsContainer">
-                    <BlogRow category={'DIY'} show={this.state.diy}/>
-                </div>
-                <div className="blogsContainer">
-                    <BlogRow category={'Fashion'} show={this.state.fashion}/>
-                </div>
-                <div className="blogsContainer">
-                    <BlogRow category={'Sports'} show={this.state.sports}/>
-                </div>
+        const layouts = {main: [
+          {i: '0', x: 0, y: 0, w: 1, h: 2.5},
+          {i: '1', x: 1, y: 0, w: 1, h: 2.5},
+          {i: '2', x: 2, y: 0, w: 1, h: 2.5},
+          {i: '3', x: 0, y: 1, w: 1, h: 2.5},
+          {i: '4', x: 1, y: 1, w: 1, h: 2.5},
+          {i: '5', x: 2, y: 1, w: 1, h: 2.5},
+          {i: '6', x: 0, y: 2, w: 1, h: 2.5},
+          {i: '7', x: 1, y: 2, w: 1, h: 2.5},
+          {i: '8', x: 2, y: 2, w: 1, h: 2.5},
+        ]};
 
+        const categoriesToShow = this.state.categoryValues.filter((category, index) => category.status );
+        const categoryObjects = categoriesToShow.map((category, index) =>
+            <div key={index} className="blogsContainer">
+                <CategoryObject category={category.name}/>
             </div>
+        );
+
+        return (
+            <ResponsiveGridLayout className="layout" layouts={layouts}
+                     breakpoints={{main: 1200}}
+                     cols={{main: 3}}>
+                {categoryObjects}
+            </ResponsiveGridLayout>
         );
     }
 }

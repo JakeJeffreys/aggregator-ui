@@ -45,7 +45,6 @@ class Blogs extends Component {
 
                 <div className="siteInfo">
                     <div id="SiteName">{blog.website}</div>
-                    <div id="Author">{blog.author}</div>
                 </div>
 
                 <div className="blogInfo">
@@ -59,13 +58,6 @@ class Blogs extends Component {
                     <div id="Date">{blog.date2} </div>
                     <div id="ArticleName">
                         <a href={blog.link2}> {blog.article2} </a>
-                    </div>
-                </div>
-
-                <div className="blogInfo">
-                    <div id="Date">{blog.date3} </div>
-                    <div id="ArticleName">
-                        <a href={blog.link3}> {blog.article3} </a>
                     </div>
                 </div>
 

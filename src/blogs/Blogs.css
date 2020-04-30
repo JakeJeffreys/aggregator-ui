@@ -7,7 +7,7 @@
 #SiteName {
     text-align: left;
     display: block;
-    font-size: 18px;
+    font-size: 13px;
     font-weight: bold;
     margin-top: 14px;
     width: 100%;
@@ -31,9 +31,6 @@
 .blogsContainer {
     overflow:auto;
     width:90%;
-    margin-left: 5%;
-    margin-right: 5%;
-    margin-bottom: 2%;
 }
 
 .blogsRow {
@@ -42,21 +39,20 @@
      border-width: 1px;
      border-radius: 5px;
      padding-top: 1.5%;
-     padding-bottom: 2%;
+     padding-bottom: 4%;
      padding-left: 2%;
      padding-right: 2%;
 }
 
 .blogBox {
     float: left;
-    width: 25%;
+    width: 100%;
     padding-left: 1.5%;
     padding-right: 1.5%;
     height: 100%;
 }
 
 .blogInfo {
-    padding-bottom: 5%;
 }
 
 a {
