@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './Home.css';
-import Blogs from "../blogs/Blogs";
+import DefaultBlogs from "../blogs/DefaultBlogs";
 import UserBlogs from "../blogs/UserBlogs";
 import {NavLink} from "react-router-dom";
 import Moment from "react-moment";
@@ -21,16 +21,16 @@ class Home extends Component {
                 </div>
 
                 { this.props.authenticated ? (
-                    <div className="home-container">
+                    <div className="blog-container">
                         <UserBlogs/>
                         <NavLink to="/profile"></NavLink>
                     </div>
 
                 ): (
-                    <div className="home-container">
-                        <h2>Welcome to BlogBase!</h2>
-                        <Blogs/>
-                        <p>Login to customize your dashboard!</p>
+                    <div className="blog-container">
+                        <h2>Welcome to BlogBase! A great way to discover new genres and keep up-to-date on your favorites.</h2>
+                        <DefaultBlogs/>
+                        <h2>Login to customize your dashboard!</h2>
                     </div>
                 )}
             </div>

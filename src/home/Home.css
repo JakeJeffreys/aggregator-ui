@@ -11,6 +11,11 @@
     margin-top: 50px; 
 }
 
+
+.blog-container {
+    margin: 1.5%;
+}
+
 .DateTime {
     text-align: center;
     padding: 1%;
@@ -27,6 +32,10 @@
   width: 100%;
   font-size: 20px;
   /* text-shadow: 0 0 3px black; */
+}
+
+h2 {
+    text-align: center;
 }
 
 .graf-bg-container {
@@ -284,3 +293,4 @@
         opacity: 0
     }
 }
+

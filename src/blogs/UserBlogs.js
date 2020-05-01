@@ -54,17 +54,41 @@ class UserBlogs extends Component {
             return <LoadingIndicator />
         }
 
-        const layouts = {main: [
-          {i: '0', x: 0, y: 0, w: 1, h: 2.5},
-          {i: '1', x: 1, y: 0, w: 1, h: 2.5},
-          {i: '2', x: 2, y: 0, w: 1, h: 2.5},
-          {i: '3', x: 0, y: 1, w: 1, h: 2.5},
-          {i: '4', x: 1, y: 1, w: 1, h: 2.5},
-          {i: '5', x: 2, y: 1, w: 1, h: 2.5},
-          {i: '6', x: 0, y: 2, w: 1, h: 2.5},
-          {i: '7', x: 1, y: 2, w: 1, h: 2.5},
-          {i: '8', x: 2, y: 2, w: 1, h: 2.5},
-        ]};
+        const layouts = {
+            lg: [
+              {i: '0', x: 0, y: 0, w: 1, h: 1},
+              {i: '1', x: 2, y: 0, w: 1, h: 1},
+              {i: '2', x: 1, y: 0, w: 1, h: 1},
+              {i: '3', x: 0, y: 1, w: 1, h: 1},
+              {i: '4', x: 2, y: 1, w: 1, h: 1},
+              {i: '5', x: 1, y: 1, w: 1, h: 1},
+              {i: '6', x: 0, y: 2, w: 1, h: 1},
+              {i: '7', x: 2, y: 2, w: 1, h: 1},
+              {i: '8', x: 1, y: 2, w: 1, h: 1}
+            ],
+            md: [
+              {i: '0', x: 0, y: 0, w: 1, h: 1},
+              {i: '1', x: 1, y: 0, w: 1, h: 1},
+              {i: '2', x: 0, y: 1, w: 1, h: 1},
+              {i: '3', x: 1, y: 1, w: 1, h: 1},
+              {i: '4', x: 0, y: 2, w: 1, h: 1},
+              {i: '5', x: 1, y: 2, w: 1, h: 1},
+              {i: '6', x: 0, y: 3, w: 1, h: 1},
+              {i: '7', x: 1, y: 3, w: 1, h: 1},
+              {i: '8', x: 0, y: 4, w: 1, h: 1}
+            ],
+            sm: [
+              {i: '0', x: 0, y: 0, w: 1, h: 1},
+              {i: '1', x: 0, y: 1, w: 1, h: 1},
+              {i: '2', x: 0, y: 2, w: 1, h: 1},
+              {i: '3', x: 0, y: 3, w: 1, h: 1},
+              {i: '4', x: 0, y: 4, w: 1, h: 1},
+              {i: '5', x: 0, y: 5, w: 1, h: 1},
+              {i: '6', x: 0, y: 6, w: 1, h: 1},
+              {i: '7', x: 0, y: 7, w: 1, h: 1},
+              {i: '8', x: 0, y: 8, w: 1, h: 1}
+            ]
+        };
 
         const categoriesToShow = this.state.categoryValues.filter((category, index) => category.status );
         const categoryObjects = categoriesToShow.map((category, index) =>
@@ -75,8 +99,10 @@ class UserBlogs extends Component {
 
         return (
             <ResponsiveGridLayout className="layout" layouts={layouts}
-                     breakpoints={{main: 1200}}
-                     cols={{main: 3}}>
+                     breakpoints={{lg: 1000, md:650, sm: 0}}
+                     cols={{lg: 3, md: 2, sm: 1}}
+                     margin={[30, 0]}
+                     rowHeight={370}>
                 {categoryObjects}
             </ResponsiveGridLayout>
         );

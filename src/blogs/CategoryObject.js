@@ -16,7 +16,6 @@ class CategoryObject extends Component {
     }
 
     loadBlogs() {
-        // console.log("Loading blogs");
         getBlogsByCategory(this.state.category)
             .then( response => {
                 this.setState({

@@ -50,17 +50,15 @@ export function signup(signupRequest) {
     });
 }
 
+// White listed from auth
 export function getBlogs() {
-    // if(!localStorage.getItem(ACCESS_TOKEN)) {
-    //     return Promise.reject("No access token set.");
-    // }
-
     return request({
         url: API_BASE_URL + "/api/blogs",
         method: 'GET'
     })
 }
 
+// White listed from auth
 export function getBlogsByCategory(category) {
     return request({
         url: API_BASE_URL + "/api/blogs/category?category=" + category,
@@ -68,6 +66,7 @@ export function getBlogsByCategory(category) {
     })
 }
 
+// White listed from auth
 export function getBlogCategories() {
         return request({
             url: API_BASE_URL + "/api/categories",
