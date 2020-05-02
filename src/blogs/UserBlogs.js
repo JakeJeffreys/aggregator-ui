@@ -52,16 +52,12 @@ class UserBlogs extends Component {
 
     constructor(props) {
         super(props);
-
         originalLayouts = getFromLS("layouts") || {...defaultLayouts};
-
         this.state = {
             categoryValues: [],
             loading: false,
             layouts: JSON.parse(JSON.stringify(originalLayouts))
         };
-
-        console.log("Constructor");
     }
 
     loadUserData() {
@@ -97,7 +93,6 @@ class UserBlogs extends Component {
     }
 
     onLayoutChange(layout, layouts) {
-        console.log("Saving layout.");
         saveToLS("layouts", layouts);
         this.setState({ layouts });
     }
@@ -112,7 +107,6 @@ class UserBlogs extends Component {
         }
 
         const categoriesToShow = this.state.categoryValues.filter((category, index) => category.status );
-
         const categoryObjects = categoriesToShow.map((category, index) =>
             <div key={index} className="blogsContainer">
                 <CategoryObject category={category.name}/>
@@ -149,7 +143,6 @@ class UserBlogs extends Component {
 }
 
 function getFromLS(key) {
-    console.log("Retrieving layout.");
   let ls = {};
   if (global.localStorage) {
     try {

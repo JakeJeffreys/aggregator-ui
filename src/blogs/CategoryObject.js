@@ -1,9 +1,7 @@
 import React, {Component} from 'react';
 import './Blogs.css';
 import {getBlogsByCategory} from '../util/APIUtils';
-//import LoadingIndicator from "../common/LoadingIndicator";
 import Moment from 'react-moment';
-
 
 class CategoryObject extends Component {
 
