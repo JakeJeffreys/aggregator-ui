@@ -15,7 +15,7 @@ class Blogs extends Component {
             categoryValues: [
                 "Finance", "Business", "Technology",
                 "DIY", "Food", "Health"
-            ],
+            ]
         };
     }
 

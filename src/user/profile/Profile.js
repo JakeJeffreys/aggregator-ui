@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import './Profile.css';
 import {getCurrentUser, setUserBlogPreferences} from "../../util/APIUtils";
 import Alert from 'react-s-alert';
+import {NavLink} from "react-router-dom";
 
 class Profile extends Component {
     constructor(props) {
@@ -118,8 +119,10 @@ class Profile extends Component {
                                     Sports <br />
                                 </label>
                                 <p/>
-                                <input type="submit" value="Submit" />
+                                <input type="submit" value="Save" />
                             </form>
+                            <br/>
+                            <button><NavLink to="/">Return to Home</NavLink></button>
                         </div>
 
 

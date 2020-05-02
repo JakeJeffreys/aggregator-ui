@@ -30,6 +30,13 @@ class CategoryObject extends Component {
         this.loadBlogs();
     }
 
+    componentWillUnmount() {
+        // fix Warning: Can't perform a React state update on an unmounted component
+        this.setState = (state,callback)=>{
+            return;
+        };
+    }
+
     render() {
 
         const blogs = this.state.blogs.map((blog, index) =>

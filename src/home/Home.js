@@ -28,9 +28,14 @@ class Home extends Component {
 
                 ): (
                     <div className="blog-container">
-                        <h2>Welcome to BlogBase! A great way to discover new genres and keep up-to-date on your favorites.</h2>
+                        <h2>Welcome to BlogBase! A great way to discover new blog genres and keep up-to-date on your favorites.</h2>
+                        <h2>
+                            <NavLink to="/signup" className='link-text'>Sign Up </NavLink>
+                            or
+                            <NavLink to="/login" className='link-text'> Login </NavLink>
+                            to customize your dashboard!
+                        </h2>
                         <DefaultBlogs/>
-                        <h2>Login to customize your dashboard!</h2>
                     </div>
                 )}
             </div>
