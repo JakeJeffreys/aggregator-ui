@@ -1,6 +1,8 @@
 import React, {Component} from 'react';
 import './Blogs.css';
-import CategoryObject from "./CategoryObject";
+import 'react-grid-layout/css/styles.css';
+import 'react-resizable/css/styles.css';
+import CategoryObject from './CategoryObject';
 import {Responsive, WidthProvider} from 'react-grid-layout';
 
 const ResponsiveGridLayout = WidthProvider(Responsive);
@@ -15,7 +17,6 @@ class Blogs extends Component {
                 "DIY", "Food", "Health"
             ],
         };
-
     }
 
     render() {

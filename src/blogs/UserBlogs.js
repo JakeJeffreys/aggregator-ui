@@ -1,9 +1,12 @@
 import React, {Component} from 'react';
 import './Blogs.css';
+import 'react-grid-layout/css/styles.css';
+import 'react-resizable/css/styles.css';
 import CategoryObject from "./CategoryObject";
 import {getCurrentUser} from "../util/APIUtils";
 import LoadingIndicator from "../common/LoadingIndicator";
 import {Responsive, WidthProvider} from 'react-grid-layout';
+import {Link, NavLink} from 'react-router-dom';
 
 const ResponsiveGridLayout = WidthProvider(Responsive);
 
@@ -91,20 +94,35 @@ class UserBlogs extends Component {
         };
 
         const categoriesToShow = this.state.categoryValues.filter((category, index) => category.status );
+
         const categoryObjects = categoriesToShow.map((category, index) =>
             <div key={index} className="blogsContainer">
                 <CategoryObject category={category.name}/>
             </div>
         );
 
+
         return (
-            <ResponsiveGridLayout className="layout" layouts={layouts}
-                     breakpoints={{lg: 1000, md:650, sm: 0}}
-                     cols={{lg: 3, md: 2, sm: 1}}
-                     margin={[30, 0]}
-                     rowHeight={370}>
-                {categoryObjects}
-            </ResponsiveGridLayout>
+            <div>
+                { categoryObjects.length === 0  ? (
+                    <div className='no-selection-message'>
+                        <div>You don't have any blog categories selected. Check out your profile to browse our category options!</div>
+                        <div className='profile-link'>
+                            <Link to="/profile" className='link-text'>Go to Profile!</Link>
+                        </div>
+                    </div>
+                ): (
+                    <ResponsiveGridLayout className="layout" layouts={layouts}
+                             breakpoints={{lg: 1000, md:650, sm: 0}}
+                             cols={{lg: 3, md: 2, sm: 1}}
+                             margin={[30, 0]}
+                             rowHeight={370}
+                             isResizable={false}
+                             compactType={null}>
+                        {categoryObjects}
+                    </ResponsiveGridLayout>
+                )}
+            </div>
         );
     }
 }

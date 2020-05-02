@@ -55,6 +55,19 @@
 .blogInfo {
 }
 
+.no-selection-message {
+    padding-top: 10%;
+    text-align: center;
+}
+
+.profile-link {
+    margin-top: 30px;
+}
+
+.link-text {
+    color: blue;
+}
+
 a {
     text-decoration: none;
     color: blue;

@@ -20,6 +20,11 @@
     font-weight: 400;
 }
 
+.profile-options {
+    display: inline-block;
+    text-align: left;
+}
+
 .text-avatar {
     width: 200px;
     height: 200px;

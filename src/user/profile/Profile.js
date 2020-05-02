@@ -95,29 +95,34 @@ class Profile extends Component {
                         </div>
 
 
-                        <form onSubmit={this.handleSubmit}>
-                            <label>
-                                <input type="checkbox" checked={this.state.finance} onChange={this.handleChange('finance')} />
-                                Finance <br />
-                                <input type="checkbox" checked={this.state.business} onChange={this.handleChange('business')} />
-                                Business <br />
-                                <input type="checkbox" checked={this.state.technology} onChange={this.handleChange('technology')} />
-                                Technology <br />
-                                <input type="checkbox" checked={this.state.travel} onChange={this.handleChange('travel')} />
-                                Travel <br />
-                                <input type="checkbox" checked={this.state.food} onChange={this.handleChange('food')} />
-                                Food <br />
-                                <input type="checkbox" checked={this.state.health} onChange={this.handleChange('health')} />
-                                Health <br />
-                                <input type="checkbox" checked={this.state.diy} onChange={this.handleChange('diy')} />
-                                DIY <br />
-                                <input type="checkbox" checked={this.state.fashion} onChange={this.handleChange('fashion')} />
-                                Fashion <br />
-                                <input type="checkbox" checked={this.state.sports} onChange={this.handleChange('sports')} />
-                                Sports <br />
-                            </label>
-                            <input type="submit" value="Submit" />
-                        </form>
+                        <div className="profile-options">
+                            <form onSubmit={this.handleSubmit}>
+                                <label>
+                                    <input type="checkbox" checked={this.state.finance} onChange={this.handleChange('finance')} />
+                                    Finance <br />
+                                    <input type="checkbox" checked={this.state.business} onChange={this.handleChange('business')} />
+                                    Business <br />
+                                    <input type="checkbox" checked={this.state.technology} onChange={this.handleChange('technology')} />
+                                    Technology <br />
+                                    <input type="checkbox" checked={this.state.travel} onChange={this.handleChange('travel')} />
+                                    Travel <br />
+                                    <input type="checkbox" checked={this.state.food} onChange={this.handleChange('food')} />
+                                    Food <br />
+                                    <input type="checkbox" checked={this.state.health} onChange={this.handleChange('health')} />
+                                    Health <br />
+                                    <input type="checkbox" checked={this.state.diy} onChange={this.handleChange('diy')} />
+                                    DIY <br />
+                                    <input type="checkbox" checked={this.state.fashion} onChange={this.handleChange('fashion')} />
+                                    Fashion <br />
+                                    <input type="checkbox" checked={this.state.sports} onChange={this.handleChange('sports')} />
+                                    Sports <br />
+                                </label>
+                                <p/>
+                                <input type="submit" value="Submit" />
+                            </form>
+                        </div>
+
+
                     </div>
                 </div>
             </div>
