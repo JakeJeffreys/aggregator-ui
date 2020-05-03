@@ -18,6 +18,8 @@
 .DateTime {
     text-align: center;
     padding: 1%;
+    width: 50%;
+    float:left;
 }
 
 .Time {
@@ -293,3 +295,21 @@ h2 {
     }
 }
 
+.iframeContainer {
+    overflow: hidden;
+    width: 50%;
+}
+
+iframe {
+  -moz-transform: scale(0.75, 0.75);
+  -webkit-transform: scale(0.75, 0.75);
+  -o-transform: scale(0.75, 0.75);
+  -ms-transform: scale(0.75, 0.75);
+  transform: scale(0.75, 0.75);
+  -moz-transform-origin: bottom left;
+  -webkit-transform-origin: bottom left;
+  -o-transform-origin: bottom left;
+  -ms-transform-origin: bottom left;
+  transform-origin: bottom left;
+  margin-top: -100px;
+}

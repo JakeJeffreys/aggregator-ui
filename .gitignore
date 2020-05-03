@@ -2,6 +2,7 @@
 
 # dependencies
 /node_modules
+/src/packages/react-forecast/node_modules
 /.pnp
 .pnp.js
 

@@ -4,11 +4,13 @@ import DefaultBlogs from "../blogs/DefaultBlogs";
 import UserBlogs from "../blogs/UserBlogs";
 import {NavLink} from "react-router-dom";
 import Moment from "react-moment";
+import Forecast from '../packages/react-forecast';
 
 class Home extends Component {
     render() {
         return (
             <div className="home-container">
+
                 <div className="DateTime">
                     <div id="center">
                       <div className="Time" id="time">
@@ -18,6 +20,10 @@ class Home extends Component {
                         <Moment format="dddd, MMMM Do"></Moment>
                       </div>
                     </div>
+                </div>
+
+                <div className='iframeContainer'>
+                    <Forecast latitude={34.05} longitude={118.25} name='Los Angeles' />
                 </div>
 
                 { this.props.authenticated ? (
