@@ -11,25 +11,33 @@ class Home extends Component {
         return (
             <div className="home-container">
 
-                <div className="DateTime">
-                    <div id="center">
-                      <div className="Time" id="time">
-                        <Moment interval={60000} format="h:mm A"></Moment>
-                      </div>
-                      <div className="Date" id="date">
-                        <Moment format="dddd, MMMM Do"></Moment>
-                      </div>
-                    </div>
-                </div>
-
-                <div className='iframeContainer'>
-                    <Forecast latitude={34.05} longitude={118.25} name='Los Angeles' />
-                </div>
-
                 { this.props.authenticated ? (
-                    <div className="blog-container">
-                        <UserBlogs/>
-                        <NavLink to="/profile"></NavLink>
+
+                    <div className="authContents">
+
+                        <div className="dashboard">
+                            <div className="DateTime">
+                                <div id="center">
+                                  <div className="Time" id="time">
+                                    <Moment interval={60000} format="h:mm A"></Moment>
+                                  </div>
+                                  <div className="Date" id="date">
+                                    <Moment format="dddd, MMMM Do"></Moment>
+                                  </div>
+                                </div>
+                            </div>
+                            <div className="verticalLine"/>
+                            <div className="Weather">
+                                <div className='iframeContainer'>
+                                    <Forecast latitude={34.05} longitude={118.25} name='Los Angeles' />
+                                </div>
+                            </div>
+                        </div>
+
+                        <div className="blog-container">
+                            <UserBlogs/>
+                            <NavLink to="/profile"></NavLink>
+                        </div>
                     </div>
 
                 ): (
