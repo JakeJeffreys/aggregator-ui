@@ -26,8 +26,12 @@
     padding-top: 25px;
     margin-left: 1.5%;
     margin-right: 1.5%;
+    margin-top: 20px;
+    margin-bottom: 40px;
     overflow-y: hidden;
     overflow-x: hidden;
+    background-color: rgba(255, 255, 255, .8);
+    color: rgba(18, 18, 18, 1);
 }
 
 /* Calculation used for sizing */
@@ -90,6 +94,11 @@ iframe {
   height: 125px;
   width: 0px;
   float: left;
+}
+
+.react-grid-item.react-grid-placeholder {
+  background: white !important;
+  opacity: 0.1;
 }
 
 .graf-bg-container {

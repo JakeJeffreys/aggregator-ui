@@ -1,25 +1,16 @@
-.App {
-  text-align: left;
+.app {
+  min-height: 100vh;
+  height: 100%;
+  background-color: rgba(18, 18, 18, 1);
+  color: rgba(255, 255, 255, .8);
+  font-family: 'Source Sans Pro', sans-serif;
 }
 
 .App-logo {
   height: 40vmin;
 }
 
-.App-header {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-}
-
-.App-link {
-  color: #09d3ac;
-}
-
 .Header {
-  /*background-color: black;*/
   height: 30px;
   padding: 20px;
   text-align: center;
@@ -54,7 +45,7 @@
 
 a {
   text-decoration: none;
-  color: black
+  color: rgba(255, 255, 255, .87);
 }
 /* unvisited link */
 /* a:link {
@@ -68,11 +59,10 @@ a {
 
 /* mouse over link */
 a:hover {
-  color: #0f96f6;
+  color: #718bf5;
 }
 
 /* selected link */
-a:active {
-  color: #0f96f6;
+a.active {
+  color: #718bf5;
 }
-
