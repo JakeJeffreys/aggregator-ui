@@ -37,26 +37,6 @@
 /* Calculation used for sizing */
 /* calc([minimum size] + ([maximum size] - [minimum size]) * ((100vw - [minimum viewport width]) / ([maximum viewport width] - [minimum viewport width]))); */
 
-.DateTime {
-    text-align: center;
-    margin-top: calc(35px + (15 - 35) * ((100vw - 300px) / (1600 - 300)));
-    width: 33%;
-    float: left;
-}
-
-.Time {
-  width: 100%;
-  font-size: calc(22px + (45 - 22) * ((100vw - 300px) / (1600 - 300)));
-  margin: 5px;
-  /* text-shadow: 0 0 5px black; */
-}
-
-.Date {
-  width: 100%;
-  font-size: calc(11px + (20 - 11) * ((100vw - 300px) / (1600 - 300)));
-  /* text-shadow: 0 0 3px black; */
-}
-
 h2 {
     text-align: center;
 }

@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import '../home/Home.css';
+import './Dashboard.css';
 import Moment from "react-moment";
 import Weather from "./Weather";
 
