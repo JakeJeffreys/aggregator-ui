@@ -18,6 +18,7 @@ class Profile extends Component {
             fashion: false,
             diy: false,
             sports: false,
+            dashboardEnabled: false
         };
 
         this.populateInitialState();
@@ -30,6 +31,7 @@ class Profile extends Component {
     populateInitialState() {
         getCurrentUser()
             .then(response => {
+                console.log(response);
                 this.setState({
                     finance: response.finance,
                     business: response.business,
@@ -39,7 +41,8 @@ class Profile extends Component {
                     health: response.health,
                     diy: response.diy,
                     fashion: response.fashion,
-                    sports: response.sports
+                    sports: response.sports,
+                    dashboardEnabled: response.dashboardEnabled
                 });
             }).catch(error => {
             console.error(error)
@@ -77,7 +80,6 @@ class Profile extends Component {
 
         return (
             <div className="profile-container">
-                <div className="container">
                     <div className="profile-info">
                         <div className="profile-avatar">
                             { 
@@ -99,50 +101,56 @@ class Profile extends Component {
 
                         <div className="profile-options">
                             <form onSubmit={this.handleSubmit}>
-                                <label class="profileSelections">
+                                <label className="profileSelections">
+                                    <input type="checkbox" checked={this.state.dashboardEnabled} onChange={this.handleChange('dashboardEnabled')} />
+                                    Dashboard Mode <br />
+                                    <span className="checkmark"></span>
+                                </label>
+                                <div className="horizontalLineShort"/>
+                                <label className="profileSelections">
                                     <input type="checkbox" checked={this.state.finance} onChange={this.handleChange('finance')} />
                                     Finance <br />
-                                    <span class="checkmark"></span>
+                                    <span className="checkmark"></span>
                                 </label>
-                                <label class="profileSelections">
+                                <label className="profileSelections">
                                     <input type="checkbox" checked={this.state.business} onChange={this.handleChange('business')} />
                                     Business <br />
-                                    <span class="checkmark"></span>
+                                    <span className="checkmark"></span>
                                 </label>
-                                <label class="profileSelections">
+                                <label className="profileSelections">
                                     <input type="checkbox" checked={this.state.technology} onChange={this.handleChange('technology')} />
                                     Technology <br />
-                                    <span class="checkmark"></span>
+                                    <span className="checkmark"></span>
                                 </label>
-                                <label class="profileSelections">
+                                <label className="profileSelections">
                                     <input type="checkbox" checked={this.state.travel} onChange={this.handleChange('travel')} />
                                     Travel <br />
-                                    <span class="checkmark"></span>
+                                    <span className="checkmark"></span>
                                 </label>
-                                <label class="profileSelections">
+                                <label className="profileSelections">
                                     <input type="checkbox" checked={this.state.food} onChange={this.handleChange('food')} />
                                     Food <br />
-                                    <span class="checkmark"></span>
+                                    <span className="checkmark"></span>
                                 </label>
-                                <label class="profileSelections">
+                                <label className="profileSelections">
                                     <input type="checkbox" checked={this.state.health} onChange={this.handleChange('health')} />
                                     Health <br />
-                                    <span class="checkmark"></span>
+                                    <span className="checkmark"></span>
                                 </label>
-                                <label class="profileSelections">
+                                <label className="profileSelections">
                                     <input type="checkbox" checked={this.state.diy} onChange={this.handleChange('diy')} />
                                     DIY <br />
-                                    <span class="checkmark"></span>
+                                    <span className="checkmark"></span>
                                 </label>
-                                <label class="profileSelections">
+                                <label className="profileSelections">
                                     <input type="checkbox" checked={this.state.fashion} onChange={this.handleChange('fashion')} />
                                     Fashion <br />
-                                    <span class="checkmark"></span>
+                                    <span className="checkmark"></span>
                                 </label>
-                                <label class="profileSelections">
+                                <label className="profileSelections">
                                     <input type="checkbox" checked={this.state.sports} onChange={this.handleChange('sports')} />
                                     Sports <br />
-                                    <span class="checkmark"></span>
+                                    <span className="checkmark"></span>
                                 </label>
                                 <p/>
                                 <input className="profileButton" type="submit" value="Save" />
@@ -153,7 +161,6 @@ class Profile extends Component {
 
 
                     </div>
-                </div>
             </div>
         );
     }

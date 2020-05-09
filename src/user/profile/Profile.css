@@ -16,7 +16,7 @@
 
 .profile-info .profile-avatar img {
     border-radius: 50%;
-    max-width: 200px;
+    max-width: 150px;
 }
 
 .profile-info .profile-name {
@@ -41,7 +41,19 @@
   height: 0px;
   width: 30vw;
   float: top;
-  padding-bottom: 40px;
+  padding-bottom: 30px;
+}
+
+.horizontalLineShort {
+  margin: auto;
+  border-top: dotted;
+  border-width: 1px;
+  height: 0px;
+  width: 30vw;
+  float: top;
+  padding-bottom: 15px;
+  width: 50px;
+  color: grey;
 }
 
 .text-avatar {

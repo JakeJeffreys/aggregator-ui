@@ -101,6 +101,10 @@ iframe {
   opacity: 0.1;
 }
 
+.react-grid-layout {
+    overflow-x: hidden;
+}
+
 .graf-bg-container {
     width: 100%;
     height: 310px;

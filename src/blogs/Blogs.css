@@ -31,6 +31,7 @@
 .blogsContainer {
     overflow:auto;
     width:90%;
+    padding-right: 2px;
 }
 
 .blogsRow {
