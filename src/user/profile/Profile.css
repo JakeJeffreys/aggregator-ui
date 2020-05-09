@@ -1,5 +1,13 @@
 .profile-container {
     padding-top: 30px;
+    width: 45%;
+    height: 90vh;
+    margin: auto;
+    overflow:auto;
+    border-style: solid;
+    border-width: 1px;
+    border-radius: 5px;
+    padding: 4%;
 }
 
 .profile-info {
@@ -8,12 +16,13 @@
 
 .profile-info .profile-avatar img {
     border-radius: 50%;
-    max-width: 250px;
+    max-width: 200px;
 }
 
 .profile-info .profile-name {
     font-weight: 500;
     font-size: 18px;
+    margin-bottom: 30px;
 }
 
 .profile-info .profile-email {
@@ -23,6 +32,16 @@
 .profile-options {
     display: inline-block;
     text-align: left;
+}
+
+.horizontalLine {
+  margin: auto;
+  border-top: solid;
+  border-width: 1px;
+  height: 0px;
+  width: 30vw;
+  float: top;
+  padding-bottom: 40px;
 }
 
 .text-avatar {
@@ -45,4 +64,102 @@
     line-height: 200px;
     color: #fff;
     font-size: 3em;
+}
+
+ /* Customize the label (the container) */
+.profileSelections {
+  display: block;
+  position: relative;
+  padding-left: 35px;
+  margin-bottom: 12px;
+  cursor: pointer;
+  font-size: 18px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* Hide the browser's default checkbox */
+.profileSelections input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+/* Create a custom checkbox */
+.checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 20px;
+  width: 20px;
+  background-color: #eee;
+}
+
+/* On mouse-over, add a grey background color */
+.profileSelections:hover input ~ .checkmark {
+  background-color: #ccc;
+}
+
+/* When the checkbox is checked, add a blue background */
+.profileSelections input:checked ~ .checkmark {
+  background-color: #2196F3;
+}
+
+/* Create the checkmark/indicator (hidden when not checked) */
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+/* Show the checkmark when checked */
+.profileSelections input:checked ~ .checkmark:after {
+  display: block;
+}
+
+/* Style the checkmark/indicator */
+.profileSelections .checkmark:after {
+  left: 7px;
+  top: 4px;
+  width: 5px;
+  height: 10px;
+  border: solid white;
+  border-width: 0 3px 3px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+.profileButton {
+    margin-top: 20px;
+    height: 40px;
+    font-size: 20px;
+    padding: 5px 15px;
+    background: #ccc;
+    border: 0 none;
+    cursor: pointer;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+}
+
+input[type=submit] {
+    width: 80px;
+    margin-left: 40px;
+}
+
+button a.active {
+    width: 190px;
+    color: black!important;
+}
+
+input:hover {
+    background-color: grey;
+}
+
+button:hover {
+    background-color: grey;
 }

@@ -95,34 +95,60 @@ class Profile extends Component {
                            <p className="profile-email">{this.props.currentUser.email}</p>
                         </div>
 
+                        <div className="horizontalLine"/>
 
                         <div className="profile-options">
                             <form onSubmit={this.handleSubmit}>
-                                <label>
+                                <label class="profileSelections">
                                     <input type="checkbox" checked={this.state.finance} onChange={this.handleChange('finance')} />
                                     Finance <br />
+                                    <span class="checkmark"></span>
+                                </label>
+                                <label class="profileSelections">
                                     <input type="checkbox" checked={this.state.business} onChange={this.handleChange('business')} />
                                     Business <br />
+                                    <span class="checkmark"></span>
+                                </label>
+                                <label class="profileSelections">
                                     <input type="checkbox" checked={this.state.technology} onChange={this.handleChange('technology')} />
                                     Technology <br />
+                                    <span class="checkmark"></span>
+                                </label>
+                                <label class="profileSelections">
                                     <input type="checkbox" checked={this.state.travel} onChange={this.handleChange('travel')} />
                                     Travel <br />
+                                    <span class="checkmark"></span>
+                                </label>
+                                <label class="profileSelections">
                                     <input type="checkbox" checked={this.state.food} onChange={this.handleChange('food')} />
                                     Food <br />
+                                    <span class="checkmark"></span>
+                                </label>
+                                <label class="profileSelections">
                                     <input type="checkbox" checked={this.state.health} onChange={this.handleChange('health')} />
                                     Health <br />
+                                    <span class="checkmark"></span>
+                                </label>
+                                <label class="profileSelections">
                                     <input type="checkbox" checked={this.state.diy} onChange={this.handleChange('diy')} />
                                     DIY <br />
+                                    <span class="checkmark"></span>
+                                </label>
+                                <label class="profileSelections">
                                     <input type="checkbox" checked={this.state.fashion} onChange={this.handleChange('fashion')} />
                                     Fashion <br />
+                                    <span class="checkmark"></span>
+                                </label>
+                                <label class="profileSelections">
                                     <input type="checkbox" checked={this.state.sports} onChange={this.handleChange('sports')} />
                                     Sports <br />
+                                    <span class="checkmark"></span>
                                 </label>
                                 <p/>
-                                <input type="submit" value="Save" />
+                                <input className="profileButton" type="submit" value="Save" />
                             </form>
                             <br/>
-                            <button><NavLink to="/">Return to Home</NavLink></button>
+                            <button className="profileButton"><NavLink to="/">Return to Home</NavLink></button>
                         </div>
 
 
