@@ -61,32 +61,6 @@ h2 {
     text-align: center;
 }
 
-.Weather {
-    width: 66%;
-    float: left;
-    padding-left: 20px;
-    padding-right: 20px;
-}
-
-.iframeContainer {
-    overflow: hidden;
-    width: 120%; /* Offsets iframe .75 scaling */
-}
-
-iframe {
-  -moz-transform: scale(0.8, 0.8);
-  -webkit-transform: scale(0.8, 0.8);
-  -o-transform: scale(0.8, 0.8);
-  -ms-transform: scale(0.8, 0.8);
-  transform: scale(0.8, 0.8);
-  -moz-transform-origin: bottom left;
-  -webkit-transform-origin: bottom left;
-  -o-transform-origin: bottom left;
-  -ms-transform-origin: bottom left;
-  transform-origin: bottom left;
-  margin-top: -90px;
-}
-
 .verticalLine {
   border-left: solid;
   border-width: 1px;

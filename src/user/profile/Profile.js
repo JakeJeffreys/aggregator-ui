@@ -31,7 +31,6 @@ class Profile extends Component {
     populateInitialState() {
         getCurrentUser()
             .then(response => {
-                console.log(response);
                 this.setState({
                     finance: response.finance,
                     business: response.business,

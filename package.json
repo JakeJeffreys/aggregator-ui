@@ -10,6 +10,7 @@
     "react-alert-template-basic": "^1.0.0",
     "react-dom": "^16.9.0",
     "react-forecast": "0.0.7",
+    "react-geolocated": "^3.0.1",
     "react-grid-layout": "^0.18.3",
     "react-moment": "^0.9.7",
     "react-router-dom": "^5.1.2",
