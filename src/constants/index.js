@@ -1,5 +1,11 @@
+/* DEV */
+//export const API_BASE_URL = 'http://localhost:8080';
+//export const NODE_BASE_URL = 'http://localhost:3000';
+
+/* PROD */
 export const API_BASE_URL = 'https://blogbase-app.herokuapp.com';
 export const NODE_BASE_URL = 'https://blogbase-ui.herokuapp.com';
+
 
 export const ACCESS_TOKEN = 'accessToken';
 
