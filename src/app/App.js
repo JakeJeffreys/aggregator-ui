@@ -98,7 +98,7 @@ class App extends Component {
                             {/*<Route path="/customize"*/}
                             {/*       remder*/}
                         </Switch>
-                        <div class="push"></div>
+                        <div className="push"></div>
                     </div>
                     <Alert stack={{limit: 3}}
                            timeout = {3000}
