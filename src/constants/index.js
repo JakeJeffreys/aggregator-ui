@@ -1,6 +1,8 @@
+require('dotenv').config();
+
 let api_base_url = null;
-if (process.env.API_ENV === 'live')
-    api_base_url = "https://blogbase-app.herokuapp.com"
+if (process.env.API_ENV === 'prod')
+    api_base_url = 'https://blogbase-app.herokuapp.com';
 else
     api_base_url = 'http://localhost:8080';
 
