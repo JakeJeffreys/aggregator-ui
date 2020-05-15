@@ -1,9 +1,12 @@
-.app {
-  min-height: 100vh;
-  height: 100%;
+.app-wrapper {
   background-color: rgba(18, 18, 18, 1);
   color: rgba(255, 255, 255, .8);
   font-family: 'Source Sans Pro', sans-serif;
+}
+
+.app {
+  min-height: calc(100vh - 20px);
+  height: 100%;
 }
 
 .App-logo {

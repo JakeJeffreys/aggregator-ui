@@ -1,0 +1,15 @@
+footer {
+  height: 20px;
+  width: 100%;
+  font-size: 11px;
+  padding: 0 10px;
+}
+
+.left, .right {
+    display:inline-block;
+    width: 50%
+}
+
+.right {
+    text-align: right;
+}
