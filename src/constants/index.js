@@ -1,4 +1,4 @@
-require('dotenv').config();
+import {} from 'dotenv/config'
 
 let api_base_url = null;
 if (process.env.API_ENV === 'prod')
