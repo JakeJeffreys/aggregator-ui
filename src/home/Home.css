@@ -41,6 +41,10 @@ h2 {
     text-align: center;
 }
 
+.headerText {
+    padding-bottom: 40px;
+}
+
 .verticalLine {
   border-left: solid;
   border-width: 1px;

@@ -124,7 +124,7 @@ class UserBlogs extends Component {
                     </div>
                 ): (
                     <ResponsiveGridLayout className="layout"
-                             breakpoints={{lg: 1000, md:650, sm: 0}}
+                             breakpoints={{lg: 1020, md:670, sm: 0}}
                              cols={{lg: 3, md: 2, sm: 1}}
                              margin={[30, 0]}
                              rowHeight={370}
