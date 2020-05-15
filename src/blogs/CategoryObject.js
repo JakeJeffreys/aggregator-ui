@@ -58,7 +58,7 @@ class CategoryObject extends Component {
 
         return (
         <div>
-            <div id="CategoryName">{this.props.category}</div>
+            <div id="CategoryName">{this.props.category[0].toUpperCase() + this.props.category.slice(1)}</div>
             <div className="blogsRow">
                 <div>{blogs}</div>
             </div>

@@ -68,15 +68,15 @@ class UserBlogs extends Component {
             .then(response => {
                 this.setState({
                     categoryValues: [
-                        {name: "Finance", status: response.finance},
-                        {name: "Business", status: response.business},
-                        {name: "Technology", status: response.technology},
-                        {name: "Travel", status: response.travel},
-                        {name: "Food", status: response.food},
-                        {name: "Health", status: response.health},
+                        {name: "finance", status: response.finance},
+                        {name: "business", status: response.business},
+                        {name: "technology", status: response.technology},
+                        {name: "travel", status: response.travel},
+                        {name: "food", status: response.food},
+                        {name: "health", status: response.health},
                         {name: "DIY", status: response.diy},
-                        {name: "Fashion", status: response.fashion},
-                        {name: "Sports", status: response.sports}
+                        {name: "fashion", status: response.fashion},
+                        {name: "sports", status: response.sports}
                     ],
                     loading: false
                 });

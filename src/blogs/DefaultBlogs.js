@@ -13,8 +13,8 @@ class Blogs extends Component {
         super(props);
         this.state = {
             categoryValues: [
-                "Finance", "Business", "Technology",
-                "DIY", "Food", "Health"
+                "finance", "business", "technology",
+                "DIY", "food", "health"
             ]
         };
     }
