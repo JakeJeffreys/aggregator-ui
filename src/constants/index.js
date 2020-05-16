@@ -4,7 +4,7 @@
 
 /* PROD */
 export const API_BASE_URL = 'https://blogbase-app.herokuapp.com';
-export const NODE_BASE_URL = 'https://blogbase.io/';
+export const NODE_BASE_URL = 'https://blogbase.io';
 
 
 export const ACCESS_TOKEN = 'accessToken';
