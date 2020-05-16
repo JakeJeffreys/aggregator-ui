@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import './Login.css';
-import { GOOGLE_AUTH_URL, ACCESS_TOKEN } from '../../constants';
-import { login } from '../../util/APIUtils';
+import { GOOGLE_AUTH_URL} from '../../constants';
 import { Link, Redirect } from 'react-router-dom'
 import googleLogo from '../../img/google-logo.png';
 import Alert from 'react-s-alert';
@@ -36,11 +35,9 @@ class Login extends Component {
             <div className="login-container">
                 <div className="login-content">
                     <h1 className="login-title">Login to BlogBase</h1>
+                    <div className="or-separator"/>
                     <SocialLogin />
-                    <div className="or-separator">
-                        <span className="or-text">OR</span>
-                    </div>
-                    <LoginForm {...this.props} />
+                    <div className="or-separator"/>
                     <span className="signup-link">New user? <Link to="/signup">Sign up!</Link></span>
                 </div>
             </div>
@@ -63,7 +60,7 @@ class SocialLogin extends Component {
     }
 }
 
-
+/*
 class LoginForm extends Component {
     constructor(props) {
         super(props);
@@ -120,5 +117,6 @@ class LoginForm extends Component {
         );
     }
 }
+*/
 
 export default Login

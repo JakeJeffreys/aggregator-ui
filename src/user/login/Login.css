@@ -1,10 +1,10 @@
 .login-container {
     text-align: center;
+    color: rgba(0, 0, 0, 0.85);
 }
 
-
 .login-content {
-    background: #fff;
+    background-color: rgba(255, 255, 255, .8);
     box-shadow: 0 1px 11px rgba(0, 0, 0, 0.27);
     border-radius: 2px;
     width: 500px;
@@ -13,6 +13,11 @@
     vertical-align: middle;
     position: relative;    
     padding: 35px;
+}
+
+.social-login {
+    padding-top: 10px;
+    padding-bottom: 2px;
 }
 
 .social-btn {
@@ -24,11 +29,11 @@
 .social-btn img {
     height: 32px;
     float: left;
-    margin-top: 10px;
+    margin-top: 5px;
 }
 
 .social-btn.google {
-    margin-top: 7px;
+    margin-top: 15px;
 }
 
 .social-btn.facebook img {
@@ -50,4 +55,8 @@
     font-weight: 500;
     margin-top: 0;
     margin-bottom: 30px;
+}
+
+.signup-link a {
+    color: #718bf5;
 }

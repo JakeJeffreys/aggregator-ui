@@ -2,9 +2,7 @@ import React, { Component } from 'react';
 import './Signup.css';
 import { Link, Redirect } from 'react-router-dom'
 import { GOOGLE_AUTH_URL } from '../../constants';
-import { signup } from '../../util/APIUtils';
 import googleLogo from '../../img/google-logo.png';
-import Alert from 'react-s-alert';
 
 class Signup extends Component {
     render() {
@@ -20,11 +18,9 @@ class Signup extends Component {
             <div className="signup-container">
                 <div className="signup-content">
                     <h1 className="signup-title">Signup with BlogBase</h1>
+                    <div className="or-separator"/>
                     <SocialSignup />
-                    <div className="or-separator">
-                        <span className="or-text">OR</span>
-                    </div>
-                    <SignupForm {...this.props} />
+                    <div className="or-separator"/>
                     <span className="login-link">Already have an account? <Link to="/login">Login!</Link></span>
                 </div>
             </div>
@@ -48,6 +44,7 @@ class SocialSignup extends Component {
     }
 }
 
+/*
 class SignupForm extends Component {
     constructor(props) {
         super(props);
@@ -110,5 +107,6 @@ class SignupForm extends Component {
         );
     }
 }
+*/
 
 export default Signup
