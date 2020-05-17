@@ -3,9 +3,8 @@
 //export const NODE_BASE_URL = 'http://localhost:3000';
 
 /* PROD */
-export const API_BASE_URL = 'https://api.blogbase.io';
-export const NODE_BASE_URL = 'https://blogbase.io';
-
+export const API_BASE_URL = 'https://blogbase-app.herokuapp.com';
+export const NODE_BASE_URL = 'https://www.blogbase.io';
 
 export const ACCESS_TOKEN = 'accessToken';
 
