@@ -49,7 +49,7 @@ class CategoryObject extends Component {
                         <Moment format="YYYY-MM-DD">{blog.date1}</Moment>
                     </div>
                     <div id="ArticleName">
-                        <a href={blog.link1}> {blog.article1} </a>
+                        <a target="_blank" rel="noopener noreferrer" href={blog.link1}> {blog.article1} </a>
                     </div>
                 </div>
 
