@@ -102,7 +102,8 @@ class Profile extends Component {
                             <form onSubmit={this.handleSubmit}>
                                 <label className="profileSelections">
                                     <input type="checkbox" checked={this.state.dashboardEnabled} onChange={this.handleChange('dashboardEnabled')} />
-                                    Dashboard Mode <br />
+                                    Homepage Mode <br />
+                                    <a className="hint" target="_blank" rel="noopener noreferrer" href="https://www.lifewire.com/set-homepage-3483132">Want to set BlogBase as your Homepage?</a>
                                     <span className="checkmark"></span>
                                 </label>
                                 <div className="horizontalLineShort"/>
