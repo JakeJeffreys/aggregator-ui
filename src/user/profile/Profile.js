@@ -156,7 +156,7 @@ class Profile extends Component {
                                 <input className="profileButton" type="submit" value="Save" />
                             </form>
                             <br/>
-                            <button className="profileButton"><NavLink to="/">Return to Home</NavLink></button>
+                            <button className="profileButton"><NavLink to="/">Return Home</NavLink></button>
                         </div>
 
 

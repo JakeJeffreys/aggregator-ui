@@ -15,7 +15,7 @@
 
 .profile-info .profile-avatar img {
     border-radius: 50%;
-    max-width: 150px;
+    max-width: 120px;
 }
 
 .profile-info .profile-name {
@@ -155,11 +155,12 @@
     cursor: pointer;
     -webkit-border-radius: 5px;
     border-radius: 5px;
+    margin-left: 45px;
 }
 
 input[type=submit] {
     width: 80px;
-    margin-left: 40px;
+    margin-left: 80px;
 }
 
 button a.active {
