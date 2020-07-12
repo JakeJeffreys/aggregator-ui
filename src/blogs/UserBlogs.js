@@ -127,7 +127,7 @@ class UserBlogs extends Component {
                              breakpoints={{lg: 1020, md:670, sm: 0}}
                              cols={{lg: 3, md: 2, sm: 1}}
                              margin={[30, 0]}
-                             rowHeight={370}
+                             rowHeight={310}
                              isResizable={false}
                              compactType={null}
                              layouts={this.state.layouts}

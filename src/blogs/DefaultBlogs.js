@@ -59,7 +59,7 @@ class Blogs extends Component {
                      breakpoints={{lg: 1000, md:650, sm: 0}}
                      cols={{lg: 3, md: 2, sm: 1}}
                      margin={[30, 0]}
-                     rowHeight={370}>
+                     rowHeight={320}>
                 {categoryObjects}
             </ResponsiveGridLayout>
         );
