@@ -40,8 +40,8 @@ class CategoryObject extends Component {
         const blogs = this.state.blogs.map((blog, index) =>
             <div key={index} className="blogBox">
 
-                <div id="ArticleName">
-                    <a target="_blank" rel="noopener noreferrer" href={blog.link1}> {blog.article1} </a>
+                <div>
+                    <a id="ArticleName" target="_blank" rel="noopener noreferrer" href={blog.link1}> {blog.article1} </a>
                 </div>
 
                 <div className="blogInfo">
