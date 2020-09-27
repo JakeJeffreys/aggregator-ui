@@ -41,7 +41,9 @@ class CategoryObject extends Component {
             <div key={index} className="blogBox">
 
                 <div>
-                    <a id="ArticleName" target="_blank" rel="noopener noreferrer" href={blog.link1}> {blog.article1} </a>
+                    <div id="articleInfo">
+                        <a id="ArticleName" target="_blank" rel="noopener noreferrer" href={blog.link1}> {blog.article1} </a>
+                    </div>
                 </div>
 
                 <div className="blogInfo">
@@ -62,6 +64,26 @@ class CategoryObject extends Component {
             <div id="CategoryName">{this.props.category[0].toUpperCase() + this.props.category.slice(1)}</div>
             <div className="blogsRow">
                 <div>{blogs}</div>
+                <span className="draggable-handle">
+                    <svg viewBox="0 0 32 32">
+                        <rect height="4" width="4" y="4" x="0"></rect>
+                        <rect height="4" width="4" y="12" x="0"></rect>
+                        <rect height="4" width="4" y="20" x="0"></rect>
+                        <rect height="4" width="4" y="28" x="0"></rect>
+                        <rect height="4" width="4" y="4" x="8"></rect>
+                        <rect height="4" width="4" y="12" x="8"></rect>
+                        <rect height="4" width="4" y="20" x="8"></rect>
+                        <rect height="4" width="4" y="28" x="8"></rect>
+                        <rect height="4" width="4" y="4" x="16"></rect>
+                        <rect height="4" width="4" y="12" x="16"></rect>
+                        <rect height="4" width="4" y="20" x="16"></rect>
+                        <rect height="4" width="4" y="28" x="16"></rect>
+                        <rect height="4" width="4" y="4" x="24"></rect>
+                        <rect height="4" width="4" y="12" x="24"></rect>
+                        <rect height="4" width="4" y="20" x="24"></rect>
+                        <rect height="4" width="4" y="28" x="24"></rect>
+                    </svg>
+                </span>
             </div>
         </div>
         );

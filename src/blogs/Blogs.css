@@ -4,6 +4,10 @@
     padding-bottom: 10px;
 }
 
+#articleInfo {
+    display: inline-block;
+}
+
 #ArticleName {
     text-align: left;
     display: block;
@@ -117,4 +121,18 @@ a:hover {
 /* selected link */
 a:active {
     color: blue;
+}
+
+.draggable-handle {
+    width: 16px;
+    height: 16px;
+    position: absolute;
+    right: 0.5em;
+    margin: auto;
+    cursor: move;
+}
+
+/* coloring the individual dots within each group */
+.draggable-handle rect {
+    fill: grey;
 }
